@@ -1,0 +1,12 @@
+version: '2'
+services:
+    ad-rest-api:
+        build: .
+        ports:
+           - 3000:3000
+        environment:
+         - ADDICT_URL=ldaps://ad.example.edu
+         - ADDICT_USER=adminuser@nsuokexample.edu
+         - ADDICT_PASS=P@EDF@AS
+         - ADDICT_PORT=3000
+         - ADDICT_CACHE=true

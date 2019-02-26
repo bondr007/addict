@@ -11,11 +11,13 @@ module.exports = args => {
   config.pass = process.env.ADDICT_PASS || config.pass;
   config.url = process.env.ADDICT_URL || config.url;
   config.port = process.env.ADDICT_PORT || config.port;
+  config.cache = process.env.ADDICT_CACHE || config.cache;
 
   config.user = args.options.user || config.user;
   config.pass = args.options.pass || config.pass;
   config.url = args.options.url || config.url;
   config.port = args.options.port || config.port;
+  config.cache = args.options.cache || config.cache;
 
   const missing = [];
   if (!config.user) {

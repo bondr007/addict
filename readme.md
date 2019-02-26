@@ -148,12 +148,17 @@ export ADDICT_URL=ldaps://[address]
 export ADDICT_USER=[user]@[domain]
 export ADDICT_PASS=[pass]
 export ADDICT_PORT=[port] # optional
+export ADDICT_CACHE=[true] [false] # optional
 ```
 
 You can [run it from docker as well](https://hub.docker.com/r/dthree/addict/), using environmental variables.
 
 Or in `./config.json`:
 
+Or with edit the enviroment variables in the docker-compose.yml and run it with:
+```bash
+docker-compose up
+```
 
 ```bash
 git clone https://github.com/dthree/addict.git

@@ -24,12 +24,15 @@ swagpi(app, {
 const init = args => {
   try {
     const config = loadConfig(args);
-    const ad = new AD(config).cache(true);
+    const ad = new AD(config).cache(config.cache || false);
     app.listen(config.port || 3000);
     routes(app, config, ad);
     vorpal.use(commands, { ad });
     vorpal.log(
       `Addict Active Directory API\nListening on port ${config.port || 3000}`
+    );
+    vorpal.log(
+      `AD request caching set to  ${config.cache || false}`
     );
   } catch (err) {
     vorpal.log(err.message);
